@@ -1,0 +1,155 @@
+*{
+  font-family: "Space Grotesk", sans-serif;
+}
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.title::before {
+    position: absolute;
+    top: 40%;
+    left: 9px;
+    content: '';
+    background: white;
+    height: 1px;
+    width: 2rem;
+}
+.title::after {
+    position: absolute;
+    top: 65%;
+    left: 0px;
+    content: '';
+    background: white;
+    height: 1px;
+    width: 2rem;
+}
+.title-others::before {
+    position: absolute;
+    top: 40%;
+    left: 9px;
+    content: '';
+    background: #0471BA;
+    height: 1px;
+    width: 2rem;
+}
+.title-others::after {
+    position: absolute;
+    top: 65%;
+    left: 0px;
+    content: '';
+    background: #0471BA;
+    height: 1px;
+    width: 2rem;
+}
+.service-shadow{
+    box-shadow: 0px 19px 68px 0px rgba(0, 0, 0, 0.05);
+}
+
+.bg1{
+    background-image: url(../assets/images/slider1.jpeg);
+    // background-size: cover;
+}
+.bg2{
+    background-image: url(../assets/images/slider2.jpeg);
+}
+.bg3{
+    background-image: url(../assets/images/slider3.jpg);
+}
+.bg{
+  background-image: url(../assets/images/banner.jpg);
+};
+
+
+@keyframes wave {
+    0% {
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+      transform: translatex(-20px);
+    }
+    50% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      transform: translateY(0);
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      transform: translateY(0);
+    }
+  }
+  
+  .wave-text {
+    display: inline-block;
+    animation: wave 5s cubic-bezier(0.4, 0, 0.2, 1) both infinite;
+    position: relative;
+    overflow: hidden;
+  }
+
+@keyframes dropDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .word-animation {
+    display: inline-block;
+    opacity: 0;
+    animation: dropDown 4.5s ease forwards infinite;
+  }
+  
+  .word-wrapper {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  @keyframes slideFromRight {
+    0% {
+      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+      transform: translateX(-20px);
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      transform: translateX(0);
+    }
+  }
+  
+  .slide-from-right {
+    display: inline-block;
+    animation: slideFromRight 5s cubic-bezier(0.4, 0, 0.2, 1) infinite forwards;
+    position: relative;
+    overflow: hidden;
+    animation-delay: 2s;
+  }
+
+
+
+  .animated-text {
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #2D7EB5, rgb(28, 28, 65)); /* Initial gradient */
+    background-size: 400% 400%; /* Make the gradient large enough for animation */
+    color: transparent; /* Make the text transparent */
+    background-clip: text; /* Clip the background to the text */
+    -webkit-background-clip: text; /* For Safari */
+    animation: gradient-animation 5s ease infinite; /* Animate the gradient */
+  }
+  
+  /* Define the gradient animation */
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  
+  
