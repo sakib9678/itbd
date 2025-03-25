@@ -152,4 +152,56 @@
   }
 
   
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
   
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #0672B8 !important;
+    background: rgba(255, 255, 255, 0.1);
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+  }
+  
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+  
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 20px !important;
+  }
+  
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+  .slick-slide {
+    padding: 0 10px;
+  }
+  
+  .slick-list {
+    margin: 0 -10px;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .hover-float:hover {
+    animation: float 3s ease-in-out infinite;
+  }

@@ -1,32 +1,22 @@
 import React, { useRef } from "react";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Image from "../Components/Layout/Image";
-import { IoMdArrowBack } from "react-icons/io";
-import { IoMdArrowForward } from "react-icons/io";
-import cardData from ".././mock-data/card.json";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
+import { motion, useInView } from "framer-motion";
 import { NavLink } from "react-router-dom";
+import cardData from ".././mock-data/card.json";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Services = () => {
   const sliderRef = useRef(null);
-  const { ref, inView } = useInView();
-
-  const handleBackArrow = () => {
-    sliderRef.current.slickPrev();
-  };
-
-  const handleForwardArrow = () => {
-    sliderRef.current.slickNext();
-  };
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
@@ -48,68 +38,135 @@ const Services = () => {
         },
       },
     ],
-    
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
   };
 
   return (
-    <section className="container pt-[80px] pb-0">
-      <div className="max-w-[1320px] ml-auto overflow-hidden">
+    <section className="relative py-20 overflow-hidden bg-gradient-to-b from-white to-blue-50" ref={sectionRef}>
+      {/* Decorative Elements */}
+      <motion.div 
+        className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100 rounded-full blur-3xl opacity-20"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.2, 0.1],
+        }}
+        transition={{ duration: 8, repeat: Infinity }}
+      />
+
+      <div className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{
-            opacity: inView ? 1 : 0,
-            y: inView ? 0 : 50,
-            transition: { duration: 1, delay: 1 },
-          }}
+          variants={headerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="max-w-[1170px] relative mb-16"
         >
-          <div ref={ref} className="max-w-[1170px] relative">
-            <div className="flex gap-[30px] flex-wrap xl:px-0 px-4">
-              <h3 className="text-[#2D7EB5] md:text-[36px] text-[28px] font-bold lg:w-[600px] w-auto lg:text-left text-center">
-                We believe innovation is the key to build a better future for our people.
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <motion.span 
+                className="inline-block px-4 py-2 bg-[#2D7EB5]/10 text-[#2D7EB5] rounded-full text-sm font-medium mb-4"
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                transition={{ delay: 0.2 }}
+              >
+                Our Services
+              </motion.span>
+              <h3 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 leading-tight">
+                We believe innovation is the key to build a 
+                <span className="text-[#2D7EB5]"> better future</span>
               </h3>
-              <p className="w-[310px] text-[#8C8B90] font-normal lg:text-left text-center lg:m-0 m-auto">
-                develops and promotes end-to-end solutions, execution agility, and depth of specialty.
+              <p className="text-gray-600 text-lg">
+                Develops and promotes end-to-end solutions, execution agility, and depth of specialty.
               </p>
-              <div className="flex gap-[150px] md:absolute relative bottom-6 right-6 m-auto">
-                <div className="cursor-pointer h-12 w-12 bg-[#2D7EB5] text-white rounded-full flex items-center justify-center"> 
-                <IoMdArrowBack className="" size={"30px"} onClick={handleBackArrow} />
-                </div>
-                <div className="cursor-pointer h-12 w-12 bg-[#2D7EB5] text-white rounded-full flex items-center justify-center">
-                <IoMdArrowForward size={"30px"} onClick={handleForwardArrow} />
-                </div>
-              </div>
+            </div>
+
+            <div className="flex justify-end gap-4">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="h-14 w-14 bg-[#2D7EB5] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#246a99] transition-all duration-300"
+                onClick={() => sliderRef.current.slickPrev()}
+              >
+                <IoMdArrowBack size={24} />
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="h-14 w-14 bg-[#2D7EB5] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#246a99] transition-all duration-300"
+                onClick={() => sliderRef.current.slickNext()}
+              >
+                <IoMdArrowForward size={24} />
+              </motion.button>
             </div>
           </div>
         </motion.div>
+
         <Slider ref={sliderRef} {...settings}>
-          {cardData &&
-            cardData?.length > 0 &&
-            cardData.map((value, index) => {
-              return (
-                <NavLink to={value.to} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} key={index}>
-                  <div className="slider-item mt-10 p-10">
-                    <div className=" shadow-lg h-full group rounded-[20px] px-[30px] pt-[40px] pb-[15px] md:w-[340px] md:mx-[20px]">
-                      <Image
-                        className={`inline-block bg-[${value.bg}] p-[25px] rounded-full duration-300 group-hover:opacity-0 group-hover:mt-[-40px]`}
-                        src={value.icon}
-                      />
-                      <h2 className="text-[28px] font-bold text-[#2D7EB5] mb-5 md:w-[280px]">
-                        {value.serviceName}
-                      </h2>
-                      <p className="text-base text-[#808291] mb-[30px] duration-[1000ms]">
-                        {value.serviceDetails}
+          {cardData?.map((service, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ delay: index * 0.1 }}
+            >
+              <NavLink to={service.to} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+                <div className="  my-8">
+                  <div className="relative bg-white rounded-2xl p-8 shadow-lg transform hover:-translate-y-2 transition-all duration-300">
+                    <div className="absolute -top-8 left-8">
+                      <motion.div
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.5 }}
+                        className={`w-16 h-16 rounded-2xl bg-[${service.bg}] flex items-center justify-center shadow-lg`}
+                      >
+                        <Image src={service.icon} className="w-10 h-10" />
+                      </motion.div>
+                    </div>
+
+                    <div className="pt-8">
+                      <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-[#2D7EB5] transition-colors">
+                        {service.serviceName}
+                      </h3>
+                      <p className="text-gray-600 mb-6 line-clamp-3">
+                        {service.serviceDetails}
                       </p>
-                      <div className="flex opacity-0 items-center duration-[800ms] group-hover:opacity-100 group-hover:mt-[-15px]">
-                        <span className="inline-block bg-[#2D7EB5] h-[2px] w-[20px]"></span>
-                        <a href={value.to} className="text-[#2D7EB5] inline-block ml-[10px]">
-                          Learn More
-                        </a>
-                      </div>
+                      
+                      <motion.div 
+                        className="flex items-center text-[#2D7EB5] font-medium"
+                        whileHover={{ x: 10 }}
+                        transition={{ type: "spring", stiffness: 200 }}
+                      >
+                        <span className="h-[2px] w-6 bg-[#2D7EB5] mr-3" />
+                        Learn More
+                      </motion.div>
                     </div>
                   </div>
-                </NavLink>
-              );
-            })}
+                </div>
+              </NavLink>
+            </motion.div>
+          ))}
         </Slider>
       </div>
     </section>

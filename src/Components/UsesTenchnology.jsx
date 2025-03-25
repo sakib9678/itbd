@@ -1,4 +1,4 @@
-import React from "react";
+import { motion } from 'framer-motion';
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { IoLogoApple, IoLogoFirebase } from "react-icons/io5";
@@ -42,52 +42,39 @@ const UsesTenchnology = () => {
       </div>
       <div className="px-4 lg:px-0">
         <Tabs>
-          <TabList className="grid grid-cols-3 md:grid-cols-5 md:justify-start justify-center overflow-auto mb-3 gap-6 cursor-pointer">
-            <Tab  className={({ isActive }) =>
-            `text-base font-medium transition-all relative
-            ${isActive ? "text-[#0471BA]" : "text-[#313131]"}
-            ${
-              mobile
-                ? "block py-2"
-                : "hover:text-[#0471BA] after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-[#0471BA] after:transition-all hover:after:w-full"
-            }`
-          }>Mobile</Tab>
-            <Tab  className={({ isActive }) =>
-            `text-base font-medium transition-all relative
-            ${isActive ? "text-[#0471BA]" : "text-[#313131]"}
-            ${
-              mobile
-                ? "block py-2"
-                : "hover:text-[#0471BA] after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-[#0471BA] after:transition-all hover:after:w-full"
-            }`
-          }>Front End</Tab>
-            <Tab  className={({ isActive }) =>
-            `text-base font-medium transition-all relative
-            ${isActive ? "text-[#0471BA]" : "text-[#313131]"}
-            ${
-              mobile
-                ? "block py-2"
-                : "hover:text-[#0471BA] after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-[#0471BA] after:transition-all hover:after:w-full"
-            }`
-          }>Database</Tab>
-            <Tab  className={({ isActive }) =>
-            `text-base font-medium transition-all relative
-            ${isActive ? "text-[#0471BA]" : "text-[#313131]"}
-            ${
-              mobile
-                ? "block py-2"
-                : "hover:text-[#0471BA] after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-[#0471BA] after:transition-all hover:after:w-full"
-            }`
-          }>Backend</Tab>
-            <Tab  className={({ isActive }) =>
-            `text-base font-medium transition-all relative
-            ${isActive ? "text-[#0471BA]" : "text-[#313131]"}
-            ${
-              mobile
-                ? "block py-2"
-                : "hover:text-[#0471BA] after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-[#0471BA] after:transition-all hover:after:w-full"
-            }`
-          }>CMS</Tab>
+          <TabList className="flex items-center justify-start overflow-x-auto mb-8 p-2  rounded-xl gap-2 backdrop-blur-sm">
+            {[
+              { label: "Mobile", icon: "" },
+              { label: "Front End", icon: "" },
+              { label: "Database", icon: "" },
+              { label: "Backend", icon: "" },
+              { label: "CMS", icon: "" },
+            ].map((tab, index) => (
+              <Tab
+                key={index}
+                className={({ isActive }) =>
+                  `flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-base transition-all duration-300
+        ${
+          isActive
+            ? "bg-[#0471BA] text-white shadow-lg shadow-[#0471BA]/20"
+            : "text-[#313131] hover:bg-[#0471BA]/10"
+        }
+        group relative overflow-hidden
+        `
+                }
+              >
+                <span className="relative z-10 transition-transform group-hover:scale-110">
+                  {tab.icon}
+                </span>
+                <span className="relative z-10">{tab.label}</span>
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-[#0471BA] to-[#0471BA]/80"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: 0 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </Tab>
+            ))}
           </TabList>
 
           <TabPanel className={""}>
@@ -110,7 +97,7 @@ const UsesTenchnology = () => {
             <TechnologysItem
               itemIconOne={<FaReact />}
               itemIconTwo={<SiVuedotjs />}
-              itemIconThree={<FaAngular/>}
+              itemIconThree={<FaAngular />}
               itemIconFour={<GiKnockout />}
               itemIconFive={<SiMeteor />}
               itemNameOne={"React"}
