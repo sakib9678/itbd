@@ -3,25 +3,25 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../Home/Home";
 import HomeContent from "../Home/HomeContent";
 import About from "../About/About";
-// import AllService from "../Components/AllService";
 import CompanyOverview from "../About/CompanyOverview";
 import OurTeam from "../About/OurTeam";
 import WebApplication from "../Components/WebApplication";
 import MobileApplication from "../Components/MobileApplication";
 import OpensourceDevelopment from "../Components/OpensourceDevelopment";
 import FrontendDevelopment from "../Components/FrontendDevelopment";
-import Blog from "../Blog";
-import SchoolManagementSystem from "../Project.jsx/SchoolManagementSystem";
-import ECommerce from "../Project.jsx/ECommerce";
-import PharmecySoftware from "../Project.jsx/PharmecySoftware";
-import POS from "../Project.jsx/POS";
+import Blog from "../Blog/Blog";
+import SchoolManagementSystem from "../Project/SchoolManagementSystem";
+import ECommerce from "../Project/ECommerce";
+import PharmecySoftware from "../Project/PharmecySoftware";
+import POS from "../Project/POS";
 import Contact from "../Contact/Contact";
 import Services from "../Services/Services";
 import Career from "../Career/Career";
-import ERP_Software from "../Project.jsx/ERP_Software";
-import CourierManagemen from "../Project.jsx/CourierManagemen";
-import TailorManagement from "../Project.jsx/TailorManagement";
-import PublicationWebsite from "../Project.jsx/PublicationWebsite";
+import ERP_Software from "../Project/ERP_Software";
+import CourierManagemen from "../Project/CourierManagemen";
+import TailorManagement from "../Project/TailorManagement";
+import PublicationWebsite from "../Project/PublicationWebsite";
+import BoiAche from "../Industries/BoiAche";
 
 
 
@@ -54,6 +54,7 @@ const AppRouter = () => {
           <Route element={<CourierManagemen />} path="/project/courier-management" />
           <Route element={<TailorManagement />} path="/project/tailor-management" />
           <Route element={<PublicationWebsite />} path="/project/publication-website" />
+          <Route element={<BoiAche />} path="/industries/boi-ache" />
           <Route element={<Contact />} path="/contact" />
           <Route element={<Career />} path="/career" />
         </Route>

@@ -129,7 +129,7 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 mt-10">
+    <div className="min-h-screen bg-gray-50">
       <div
         className={`relative py-24 transition-all duration-1000 ${
           isLoaded ? "opacity-100" : "opacity-0" 

@@ -205,8 +205,44 @@ const NavLinks = ({ mobile }) => {
         </ul>
       </li>
 
+      <li className="relative group">
+        <div className="flex items-center gap-1 cursor-pointer text-[#313131] hover:text-[#1C487E] duration-300">
+          <span>Industries</span>
+          <MdOutlineArrowDropDown className="group-hover:rotate-180 transition-transform duration-300" />
+        </div>
+        <ul
+          className="absolute top-full  bg-white/95 backdrop-blur-sm shadow-xl rounded-lg left-0 
+            group-hover:h-auto h-0 min-w-[200px] whitespace-nowrap overflow-hidden transition-all duration-300"
+        >
+          {[
+            { name: "Edu Poribar", to: "" },
+            { name: "BDCODA", to: "" },
+            { name: "Boi Ache", to: "/industries/boi-ache" },
+            { name: "Laptop Ache", to: "" },
+            { name: "Courier Ache", to: "" },
+            { name: "Aykori.com", to: "" },
+            { name: "Kaz Ache", to: "" },
+            
+          ].map((item) => (
+            <li
+              key={item}
+              className="transform hover:translate-x-2 transition-transform"
+            >
+              <NavLink
+                to={item.to}
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="flex items-center gap-2 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 hover:text-[#0471BA]"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#0471BA]"></span>
+                {item.name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </li>
+
       {/* Other Navigation Links */}
-      {["Services", "Industries", "Career", "Blog", "Contact"].map((item) => (
+      {["Services", "Career", "Blog", "Contact"].map((item) => (
         <li key={item}>
           <NavLink
             to={`/${item.toLowerCase()}`}

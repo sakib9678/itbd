@@ -1,6 +1,7 @@
 import { FaFacebook, FaInstagram, FaLinkedinIn, FaTwitch, FaTwitter } from "react-icons/fa"
 import { motion } from "framer-motion"
 import logo from "../assets/images/itbd-logo.png"
+import { LuLayoutList } from "react-icons/lu"
 
 const Footer = () => {
   const socialVariants = {
@@ -70,7 +71,7 @@ const Footer = () => {
                     variants={listItemVariants}
                     whileHover="hover"
                   >
-                    <a href='/' 
+                    <a href='/services' 
                        className="text-gray-600 hover:text-[#2D7EB5] transition duration-300 text-lg flex items-center">
                       <span>→ Service</span>
                     </a>
@@ -82,7 +83,7 @@ const Footer = () => {
                     variants={listItemVariants}
                     whileHover="hover"
                   >
-                    <a href='/' 
+                    <a href='/blog' 
                        className="text-gray-600 hover:text-[#2D7EB5] transition duration-300 text-lg flex items-center">
                       <span>→ Blog</span>
                     </a>
@@ -94,7 +95,7 @@ const Footer = () => {
                     variants={listItemVariants}
                     whileHover="hover"
                   >
-                    <a href='/' 
+                    <a href='/contact' 
                        className="text-gray-600 hover:text-[#2D7EB5] transition duration-300 text-lg flex items-center">
                       <span>→ Contact</span>
                     </a>
@@ -185,3 +186,4 @@ const Footer = () => {
 }
 
 export default Footer
+

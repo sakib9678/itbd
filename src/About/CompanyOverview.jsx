@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ourVision from "../assets/images/ourVision.jpg";
-import ourMission from "../assets/images/ourMission.jpg";
+import ourMission from "../assets/images/ourMission.png";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -166,7 +166,7 @@ const CompanyOverview = () => {
               whileHover={{ scale: 1.05, rotate: -5 }}
               transition={{ duration: 0.5 }}
             >
-              <img className="rounded-full h-[590px] w-[590px]" src={ourMission} alt="" />
+              <img className="rounded-full " src={ourMission} alt="" />
             </motion.div>
             <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
               <h4 className="text-3xl font-semibold text-[#2D7EB5]">
