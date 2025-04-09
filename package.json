@@ -1,5 +1,6 @@
 {
   "name": "itbd",
+  "homepage": "https://itbd.courierache.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",
