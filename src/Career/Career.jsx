@@ -57,7 +57,7 @@ const Career = () => {
 
   const openPositions = [
     {
-      title: "Senior React Developer",
+      title: "Senior Full Stack Developer",
       type: "Full-time",
       location: "Remote",
       department: "Engineering",
@@ -285,9 +285,14 @@ const Career = () => {
                     {position.experience}
                   </span>
                 </div>
-                <button className="w-full bg-[#2D7EB5] group-hover:bg-white group-hover:text-[#2D7EB5] text-white px-6 py-3 rounded-lg font-semibold transition-all transform hover:-translate-y-1 hover:shadow-lg">
+
+                <a
+                  href="/career/job-description"
+                  className="block w-full bg-[#2D7EB5] group-hover:bg-white group-hover:text-[#2D7EB5] text-white text-center px-6 py-3 rounded-lg font-semibold transition-all transform hover:-translate-y-1 hover:shadow-lg"
+                >
                   Apply Now →
-                </button>
+                </a>
+
               </motion.div>
             ))}
           </div>

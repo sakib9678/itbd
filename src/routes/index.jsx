@@ -22,6 +22,13 @@ import CourierManagemen from "../Project/CourierManagemen";
 import TailorManagement from "../Project/TailorManagement";
 import PublicationWebsite from "../Project/PublicationWebsite";
 import BoiAche from "../Industries/BoiAche";
+import EduPoribar from "../Industries/EduPoribar";
+import BDCODA from "../Industries/BDCODA";
+import LaptopAche from "../Industries/LaptopAche";
+import CourierAche from "../Industries/CourierAche";
+import KazAche from "../Industries/KazAche";
+import JobDescription from "../Career/JobDescription";
+import JobApplicationForm from "../Career/JobApplicationForm";
 
 
 
@@ -55,8 +62,15 @@ const AppRouter = () => {
           <Route element={<TailorManagement />} path="/project/tailor-management" />
           <Route element={<PublicationWebsite />} path="/project/publication-website" />
           <Route element={<BoiAche />} path="/industries/boi-ache" />
+          <Route element={<EduPoribar />} path="/industries/edu-poribar" />
+          <Route element={<BDCODA />} path="/industries/bdcoda" />
+          <Route element={<LaptopAche />} path="/industries/laptop-ache" />
+          <Route element={<CourierAche />} path="/industries/courier-ache" />
+          <Route element={<KazAche />} path="/industries/kaz-ache" />
           <Route element={<Contact />} path="/contact" />
           <Route element={<Career />} path="/career" />
+          <Route element={<JobDescription />} path="/career/job-description" />
+          <Route element={<JobApplicationForm />} path="/career/apply-job" />
         </Route>
       </Routes>
     </Suspense>
