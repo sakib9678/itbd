@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 import { FiArrowRight } from "react-icons/fi";
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from "react-type-animation";
 import { useState } from "react";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -19,16 +19,18 @@ const Hero = () => {
       titleStart: "Innovation",
       titleEnd: "Digital Excellence",
       typingWords: ["Technology", "Innovation", "Excellence"],
-      description: "Transforming businesses through cutting-edge technology solutions",
-      stats: ["15+ Years", "500+ Projects", "98% Satisfaction"]
+      description:
+        "Transforming businesses through cutting-edge technology solutions",
+      stats: ["15+ Years", "500+ Projects", "98% Satisfaction"],
     },
     {
       badge: "Digital Transformation",
       titleStart: "Building",
       titleEnd: "Future Solutions",
       typingWords: ["Modern", "Scalable", "Reliable"],
-      description: "Expert development teams creating innovative digital experiences",
-      stats: ["24/7 Support", "50+ Experts", "Global Reach"]
+      description:
+        "Expert development teams creating innovative digital experiences",
+      stats: ["24/7 Support", "50+ Experts", "Global Reach"],
     },
     {
       badge: "Tech Excellence",
@@ -36,8 +38,8 @@ const Hero = () => {
       titleEnd: "Your Business",
       typingWords: ["Web Apps", "Mobile Apps", "Cloud Solutions"],
       description: "Strategic technology solutions for modern enterprises",
-      stats: ["100+ Clients", "10+ Industries", "5★ Rating"]
-    }
+      stats: ["100+ Clients", "10+ Industries", "5★ Rating"],
+    },
   ];
 
   const containerVariants = {
@@ -48,19 +50,19 @@ const Hero = () => {
       transition: {
         duration: 0.6,
         when: "beforeChildren",
-        staggerChildren: 0.2
-      }
+        staggerChildren: 0.2,
+      },
     },
     exit: {
       opacity: 0,
       y: -20,
-      transition: { duration: 0.3 }
-    }
+      transition: { duration: 0.3 },
+    },
   };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1 }
+    visible: { y: 0, opacity: 1 },
   };
 
   return (
@@ -127,7 +129,9 @@ const Hero = () => {
                                    bg-[#0672B8]/10 border border-[#0672B8]/20 backdrop-blur-sm mb-8"
                         >
                           <span className="w-2 h-2 rounded-full bg-[#0672B8] animate-pulse" />
-                          <span className="text-[#0672B8] text-sm font-medium">{slide.badge}</span>
+                          <span className="text-[#0672B8] text-sm font-medium">
+                            {slide.badge}
+                          </span>
                         </motion.div>
 
                         {/* Title */}
@@ -135,10 +139,15 @@ const Hero = () => {
                           variants={itemVariants}
                           className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8"
                         >
-                          <span className="text-[#0672B8]">{slide.titleStart}</span> {slide.titleEnd}
+                          <span className="text-[#0672B8]">
+                            {slide.titleStart}
+                          </span>{" "}
+                          {slide.titleEnd}
                           <div className="h-20">
                             <TypeAnimation
-                              sequence={slide.typingWords.map(word => [word, 2000]).flat()}
+                              sequence={slide.typingWords
+                                .map((word) => [word, 2000])
+                                .flat()}
                               wrapper="span"
                               speed={50}
                               repeat={Infinity}
@@ -195,7 +204,7 @@ const Hero = () => {
                                 <motion.div
                                   initial={{ opacity: 0, scale: 0.5 }}
                                   animate={{ opacity: 1, scale: 1 }}
-                                  transition={{ delay: 0.5 + (i * 0.1) }}
+                                  transition={{ delay: 0.5 + i * 0.1 }}
                                   className="text-[#0672B8] font-bold text-2xl mb-1"
                                 >
                                   {stat}
@@ -218,33 +227,29 @@ const Hero = () => {
           animate={{
             y: [0, -20, 0],
             rotate: [0, 10, 0],
-            scale: [1, 1.05, 1]
+            scale: [1, 1.05, 1],
           }}
           transition={{
             repeat: Infinity,
             duration: 5,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
-          className="absolute top-10 md:top-20 right-10 md:right-20 z-10 w-28 md:w-32 h-28 md:h-32 rounded-full 
-                     bg-gradient-to-br from-[#0672B8]/20 to-transparent 
-                     backdrop-blur-sm border border-[#0672B8]/20"
+          className=""
         />
 
         <motion.div
           animate={{
             y: [0, 20, 0],
             rotate: [0, -10, 0],
-            scale: [1, 1.1, 1]
+            scale: [1, 1.1, 1],
           }}
           transition={{
             repeat: Infinity,
             duration: 4,
             ease: "easeInOut",
-            delay: 0.5
+            delay: 0.5,
           }}
-          className="absolute bottom-40 right-40 z-10 w-24 h-24 rounded-2xl 
-                     bg-gradient-to-tr from-[#0672B8]/10 to-transparent 
-                     backdrop-blur-sm border border-[#0672B8]/10"
+          className=""
         />
 
         {/* Slide Indicators */}
@@ -253,10 +258,11 @@ const Hero = () => {
             <motion.div
               key={i}
               initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ 
+              animate={{
                 scale: 1,
                 opacity: 1,
-                backgroundColor: i === activeIndex ? '#0672B8' : 'rgba(6, 114, 184, 0.2)'
+                backgroundColor:
+                  i === activeIndex ? "#0672B8" : "rgba(6, 114, 184, 0.2)",
               }}
               whileHover={{ scale: 1.2 }}
               className="w-3 h-3 rounded-full cursor-pointer"
