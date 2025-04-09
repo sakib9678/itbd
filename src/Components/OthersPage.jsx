@@ -29,7 +29,7 @@ const OthersPage = () => {
 
         <div className="order-2 md:order-3">
           <img 
-            className="h-48 md:h-60 lg:h-72 -mt-4 md:-mt-20" 
+            className="h-48 hidden md:h-60 lg:h-72 -mt-4 md:-mt-20" 
             src={girl} 
             alt="Girl illustration" 
           />
