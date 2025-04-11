@@ -162,7 +162,7 @@ const OurTeam = () => {
         >
           <motion.h2
             whileHover={{ scale: 1.05 }}
-            className="text-5xl font-bold bg-gradient-to-r from-[#2D7EB5] to-blue-600 bg-clip-text text-transparent"
+            className="text-5xl font-bold animated-text2"
           >
             Our Team
           </motion.h2>

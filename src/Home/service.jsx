@@ -65,7 +65,7 @@ const Services = () => {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-b from-white to-blue-50" ref={sectionRef}>
+    <section className="container relative py-20 overflow-hidden bg-gradient-to-b from-white to-blue-50" ref={sectionRef}>
       {/* Decorative Elements */}
       <motion.div 
         className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100 rounded-full blur-3xl opacity-20"

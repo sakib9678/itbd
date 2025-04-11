@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 
 const MobileApplication = () => {
   return (
-    <div className="px-4 py-16 bg-gradient-to-b from-gray-50 to-gray-100">
-      <div className="max-w-6xl mx-auto">
+    <div className="p-10 bg-gradient-to-b from-gray-50 to-gray-100">
+      <div className=" max-w-6xl mx-auto">
         {/* Existing Header Section */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

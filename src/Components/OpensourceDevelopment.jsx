@@ -4,9 +4,9 @@ import { FaCode, FaUsers, FaBuilding } from "react-icons/fa";
 
 const OpensourceDevelopment = () => {
   return (
-    <div>
-      <div className="bg-white text-gray-800 py-16">
-        <div className="container mx-auto px-4">
+    <div className="mx-auto px-4 py-5">
+      <div className="container bg-white text-gray-800 py-16">
+        <div className="">
           <motion.h1
             className="text-5xl font-bold mb-8 text-center bg-[#2D7EB5] bg-clip-text text-transparent"
             initial={{ opacity: 0, y: -50 }}

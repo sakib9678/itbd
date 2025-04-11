@@ -68,11 +68,11 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-white py-16 sm:py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <div className="container mx-auto px-4 bg-gradient-to-b from-gray-50 to-white  py-16 sm:py-16">
+      <div className=" px-4 sm:px-4 lg:px-8 pb-20 my-10">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-[#2D7EB5] to-blue-900 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 animated-text2">
             Customer Testimonials
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -84,10 +84,10 @@ const Testimonial = () => {
         {/* Slider Section */}
         <Slider {...settings} className="review-slider -mx-4">
           {reviewSlides.map((item) => (
-            <div key={item.id} className="px-4 py-2">
+            <div key={item.id} className="px-4 py-4">
               <div className="relative p-8 rounded-2xl bg-white shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 h-full border border-gray-100">
                 {/* Quote Icon */}
-                <FaQuoteLeft className="absolute top-0 left-0 -translate-y-1/2 -translate-x-1/2 text-4xl text-[#2D7EB5] opacity-20" />
+                <FaQuoteLeft className="absolute top-0 left-0 -translate-y-1/2 -translate-x-1/2 text-4xl text-[#2D7EB5]" />
 
                 {/* Star Ratings */}
                 <div className="flex mb-4">

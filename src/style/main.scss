@@ -2,7 +2,7 @@
   font-family: "Space Grotesk", sans-serif;
 }
 .container {
-    max-width: 1220px;
+    max-width: 1196px; //previous 1220px
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -142,12 +142,22 @@
   .animated-text {
     font-size: 4rem;
     font-weight: bold;
-    background: linear-gradient(45deg, #2D7EB5, rgb(28, 28, 65)); /* Initial gradient */
+    background: linear-gradient(45deg,#2D7EB5, rgb(85, 220, 175), rgb(166, 241, 67)); /* Initial gradient */
     background-size: 400% 400%; /* Make the gradient large enough for animation */
     color: transparent; /* Make the text transparent */
     background-clip: text; /* Clip the background to the text */
     -webkit-background-clip: text; /* For Safari */
-    animation: gradient-animation 5s ease infinite; /* Animate the gradient */
+    animation: gradient-animation 3s ease-in-out infinite; /* Animate the gradient */
+  }
+  
+  .animated-text2 {
+    background: linear-gradient(45deg,#2D7EB5, rgb(85, 220, 175), rgb(166, 241, 67)); /* Initial gradient */
+    background-size: 400% 400%; /* Make the gradient large enough for animation */
+    color: transparent; /* Make the text transparent */
+    background-clip: text; /* Clip the background to the text */
+    -webkit-background-clip: text; /* For Safari */
+    animation: gradient-animation 3s ease-in-out infinite; /* Animate the gradient */
+    
   }
   
   /* Define the gradient animation */
@@ -217,5 +227,7 @@
   .hover-float:hover {
     animation: float 3s ease-in-out infinite;
   }
+
+  
 
   

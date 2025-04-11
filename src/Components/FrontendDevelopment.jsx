@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 const FrontendDevelopment = () => {
   return (
-    <div>
+    <div className="container mx-auto px-4">
       <div className="min-h-screen mt-10">
-        <div className="container mx-auto px-4 py-16">
+        <div className="px-4 py-16">
           {/* Hero Section */}
           <motion.div
             className="text-center mb-12"

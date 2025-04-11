@@ -1,6 +1,6 @@
 const SectionHeader = ({startTitle,title, subTitle}) => {
   return (
-    <div className="section-header text-center">
+    <div className="container mx-auto px-4 section-header text-center">
       <h3 className="text-center  text-2xl text-[#0471BA] ">
         <span className="title-others relative pl-12 ml-1 font-medium">
           {startTitle}

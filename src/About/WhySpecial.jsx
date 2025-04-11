@@ -63,7 +63,7 @@ const WhySpecial = () => {
   return (
     <div className="container" ref={ref}>
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 py-20"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 py-20  mx-auto px-4"
         initial={{ opacity: 0, y: 100 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
         transition={{ duration: 1 }}

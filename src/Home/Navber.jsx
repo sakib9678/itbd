@@ -162,7 +162,7 @@ const NavLinks = ({ mobile }) => {
 
       {/* About Dropdown */}
       <li className={`relative ${mobile ? "" : "group"}`}>
-        <div 
+        <div
           className="flex items-center gap-1 cursor-pointer text-[#313131] hover:text-[#1C487E] duration-300"
           onClick={() => mobile && toggleDropdown('about')}
         >
@@ -199,8 +199,8 @@ const NavLinks = ({ mobile }) => {
 
       {/* Projects Dropdown */}
       <li className={`relative ${mobile ? "" : "group"}`}>
-        <div 
-          className="flex items-center gap-1 cursor-pointer text-[#313131] hover:text-[#1C487E] duration-300"
+        <div
+          className="flex items-center gap-2 cursor-pointer text-[#313131] hover:text-[#1C487E] duration-300"
           onClick={() => mobile && toggleDropdown('projects')}
         >
           <span>Projects</span>
@@ -256,7 +256,7 @@ const NavLinks = ({ mobile }) => {
           ].map((item) => (
             <li
               key={item.to}
-              className="transform hover:translate-x-2 transition-transform w-64 h-20"
+              className="transform hover:translate-x-2 transition-transform w-64 h-20 py-6"
             >
               <NavLink
                 to={item.to}
@@ -272,7 +272,7 @@ const NavLinks = ({ mobile }) => {
 
       {/* Industries Dropdown */}
       <li className={`relative ${mobile ? "" : "group"}`}>
-        <div 
+        <div
           className="flex items-center gap-1 cursor-pointer text-[#313131] hover:text-[#1C487E] duration-300"
           onClick={() => mobile && toggleDropdown('industries')}
         >
@@ -295,7 +295,7 @@ const NavLinks = ({ mobile }) => {
           ].map((item) => (
             <li
               key={item.to}
-              className="transform hover:translate-x-2 transition-transform w-44 h-20"
+              className="transform hover:translate-x-2 transition-transform w-44 h-20 py-6"
             >
               <NavLink
                 to={item.to}

@@ -4,15 +4,15 @@ import { motion } from "framer-motion"; // Add this import
 
 const WebApplication = () => {
   return (
-    <div className="font-sans">
+    <div className="font-sans container mx-auto">
       {/* Hero Section */}
-      <section className="py-20 flex justify-evenly items-center bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 grid grid-cols-1 md:grid-cols-2 justify-evenly items-center bg-gradient-to-br from-gray-50 to-blue-50">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="container mx-auto px-4 text-center">
+          <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-[#2D7EB5]">
               Web Application Development Services
             </h1>

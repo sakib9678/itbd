@@ -4,7 +4,7 @@ import { FaArrowRight, FaCalendar } from "react-icons/fa";
 
 const OurBlog = () => {
   return (
-    <div className="container mt-10">
+    <div className="container mx-auto px-4 mt-10">
       <div className="mx-auto py-16 px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -12,7 +12,7 @@ const OurBlog = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-5xl font-bold animated-text2 mb-4">
             Our Latest Blog Posts
           </h2>
           <p className="text-gray-600">

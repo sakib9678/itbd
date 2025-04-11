@@ -15,7 +15,7 @@ const TechnologysItem = ({
     itemNameSix,
   }) => {
   return (
-    <div className="flex flex-wrap justify-center pt-4 gap-[80px] md:justify-start">
+    <div className="container mx-auto px-4 flex flex-wrap justify-center pt-4 gap-[80px] md:justify-start">
       <div className="flex flex-col justify-around items-center text-[#113759] group">
         <div className="text-[80px] group-hover:text-[#2D7EB5] duration-500 mb-3">
           {itemIconOne}
