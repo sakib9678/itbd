@@ -29,6 +29,10 @@ import CourierAche from "../Industries/CourierAche";
 import KazAche from "../Industries/KazAche";
 import JobDescription from "../Career/JobDescription";
 import JobApplicationForm from "../Career/JobApplicationForm";
+import BlogPost1 from "../Blog/BlogPost1";
+import BlogPost2 from "../Blog/BlogPost2";
+import BlogPost3 from "../Blog/BlogPost3";
+import BlogPost4 from "../Blog/BlogPost4";
 
 
 
@@ -53,6 +57,11 @@ const AppRouter = () => {
           <Route element={<OpensourceDevelopment />} path="/services/opensource-development" />
           <Route element={<FrontendDevelopment />} path="/services/frontend-development" />
           <Route element={<Blog />} path="/blog" />
+          <Route element={<BlogPost1 />} path="/blog/blog-post-1" />
+          <Route element={<BlogPost2 />} path="/blog/blog-post-2" />
+          <Route element={<BlogPost3 />} path="/blog/blog-post-3" />
+          <Route element={<BlogPost4 />} path="/blog/blog-post-4" />
+
           <Route element={<SchoolManagementSystem />} path="/project/school-management" />
           <Route element={<ECommerce />} path="/project/e-commerce-website" />
           <Route element={<PharmecySoftware />} path="/project/pharmacy-software" />
@@ -71,6 +80,7 @@ const AppRouter = () => {
           <Route element={<Career />} path="/career" />
           <Route element={<JobDescription />} path="/career/job-description" />
           <Route element={<JobApplicationForm />} path="/career/apply-job" />
+          
         </Route>
       </Routes>
     </Suspense>

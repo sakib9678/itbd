@@ -1,3 +1,4 @@
+import { a } from "framer-motion/client";
 import React, { useState, useEffect } from "react";
 
 const Blog = () => {
@@ -22,38 +23,41 @@ const Blog = () => {
   // Blog post data with actual tech images
   const featuredPosts = [
     {
-        title: "The Future of Technology",
-        category: "Cloud Computing",
-        description:
-          "Explore the latest trends in technology and their impact on our daily lives.",
-        image:
-          "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
-        author: "Alex Johnson",
-        date: "Mar 15, 2025",
-        readTime: "5 min read",
-      },
-      {
-        title: "Web Development Best Practices",
-        category: "Cloud Computing",
-        description:
-          "Learn about modern web development techniques and tools.",
-        image:
-          "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
-        author: "Alex Johnson",
-        date: "Mar 15, 2025",
-        readTime: "5 min read",
-      },
-      {
-        title: "Digital Transformation",
-        category: "Cloud Computing",
-        description:
-          "Discover how businesses are adapting to the digital age.",
-        image:
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80",
-        author: "Alex Johnson",
-        date: "Mar 15, 2025",
-        readTime: "5 min read",
-      },
+      title: "The Future of Technology",
+      category: "Cloud Computing",
+      description:
+        "Explore the latest trends in technology and their impact on our daily lives.",
+      image:
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+      author: "Alex Johnson",
+      date: "Mar 15, 2025",
+      readTime: "5 min read",
+      to: "/blog/blog-post-1",
+    },
+    {
+      title: "Web Development Best Practices",
+      category: "Cloud Computing",
+      description:
+        "Learn about modern web development techniques and tools.",
+      image:
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
+      author: "Alex Johnson",
+      date: "Mar 15, 2025",
+      readTime: "5 min read",
+      to: "/blog/blog-post-2",
+    },
+    {
+      title: "Digital Transformation",
+      category: "Cloud Computing",
+      description:
+        "Discover how businesses are adapting to the digital age.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80",
+      author: "Alex Johnson",
+      date: "Mar 15, 2025",
+      readTime: "5 min read",
+      to: "/blog/blog-post-3",
+    },
     {
       title: "The Future of Cloud Architecture in 2025",
       category: "Cloud Computing",
@@ -64,6 +68,7 @@ const Blog = () => {
       author: "Alex Johnson",
       date: "Mar 15, 2025",
       readTime: "5 min read",
+      to: "/blog/blog-post-4",
     },
     {
       title: "AI-Driven Development Practices",
@@ -131,9 +136,8 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div
-        className={`relative py-24 transition-all duration-1000 ${
-          isLoaded ? "opacity-100" : "opacity-0" 
-        }`}
+        className={`relative py-24 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"
+          }`}
         style={{
           backgroundImage:
             "url(https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1500&auto=format&fit=crop&q=80&ixlib=rb-4.0.3)",
@@ -147,37 +151,33 @@ const Blog = () => {
           <div className="md:flex md:items-center md:justify-between">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <h1
-                className={`text-4xl font-bold mb-4 transition-all duration-1000 transform ${
-                  isLoaded ? "translate-x-0" : "-translate-x-20"
-                }`}
+                className={`text-4xl font-bold mb-4 transition-all duration-1000 transform ${isLoaded ? "translate-x-0" : "-translate-x-20"
+                  }`}
               >
                 Latest Insights in Technology
               </h1>
               <p
-                className={`text-lg mb-6 transition-all duration-1000 delay-100 transform ${
-                  isLoaded
+                className={`text-lg mb-6 transition-all duration-1000 delay-100 transform ${isLoaded
                     ? "translate-x-0 opacity-100"
                     : "-translate-x-20 opacity-0"
-                }`}
+                  }`}
               >
                 Stay updated with cutting-edge tech trends, tutorials, and
                 industry news.
               </p>
               <button
-                className={`bg-white text-[#2D7EB5] px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-gray-100 transition-all transform hover:scale-105 duration-300 ${
-                  isLoaded ? "opacity-100" : "opacity-0"
-                }`}
+                className={`bg-white text-[#2D7EB5] px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-gray-100 transition-all transform hover:scale-105 duration-300 ${isLoaded ? "opacity-100" : "opacity-0"
+                  }`}
               >
                 Subscribe Now
               </button>
             </div>
             <div className="md:w-1/2 flex justify-end">
               <div
-                className={`relative w-full max-w-md transition-all duration-1000 delay-300 transform ${
-                  isLoaded
+                className={`relative w-full max-w-md transition-all duration-1000 delay-300 transform ${isLoaded
                     ? "translate-y-0 opacity-100"
                     : "translate-y-20 opacity-0"
-                }`}
+                  }`}
               >
                 <img
                   src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.0.3"
@@ -193,54 +193,54 @@ const Blog = () => {
       {/* Featured Posts */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h2
-          className={`text-3xl font-bold text-gray-900 mb-8 transition-all duration-700 ${
-            isLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          className={`text-3xl font-bold text-gray-900 mb-8 transition-all duration-700 ${isLoaded ? "opacity-100" : "opacity-0"
+            }`}
         >
           Featured Posts
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredPosts.map((post, index) => (
-            <div
-              key={index}
-              className={`bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-700 hover:shadow-xl ${
-                animatedIndex > index
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-10 opacity-0"
-              }`}
-              style={{ transitionDelay: `${index * 150}ms` }}
-            >
-              <div className="overflow-hidden h-48">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center mb-2">
-                  <span className="bg-blue-100 text-[#2D7EB5] text-xs px-2 py-1 rounded">
-                    {post.category}
-                  </span>
-                  <span className="text-gray-500 text-sm ml-2">
-                    {post.readTime}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold mb-2">{post.title}</h3>
-                <p className="text-gray-600 mb-4">{post.description}</p>
-                <div className="flex items-center">
+            <a href={post.to}>
+              <div
+                key={index}
+                className={`bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-700 hover:shadow-xl ${animatedIndex > index
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-10 opacity-0"
+                  }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
+                <div className="overflow-hidden h-48">
                   <img
-                    src={`https://i.pravatar.cc/150?img=${index + 10}`}
-                    alt={post.author}
-                    className="w-10 h-10 rounded-full mr-4"
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
                   />
-                  <div>
-                    <p className="font-medium">{post.author}</p>
-                    <p className="text-gray-500 text-sm">{post.date}</p>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center mb-2">
+                    <span className="bg-blue-100 text-[#2D7EB5] text-xs px-2 py-1 rounded">
+                      {post.category}
+                    </span>
+                    <span className="text-gray-500 text-sm ml-2">
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{post.title}</h3>
+                  <p className="text-gray-600 mb-4">{post.description}</p>
+                  <div className="flex items-center">
+                    <img
+                      src={`https://i.pravatar.cc/150?img=${index + 10}`}
+                      alt={post.author}
+                      className="w-10 h-10 rounded-full mr-4"
+                    />
+                    <div>
+                      <p className="font-medium">{post.author}</p>
+                      <p className="text-gray-500 text-sm">{post.date}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
@@ -276,11 +276,10 @@ const Blog = () => {
             {latestArticles.map((article, index) => (
               <div
                 key={index}
-                className={`flex bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-700 hover:shadow-xl ${
-                  animatedIndex > index + 3
+                className={`flex bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-700 hover:shadow-xl ${animatedIndex > index + 3
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
-                }`}
+                  }`}
                 style={{ transitionDelay: `${(index + 3) * 150}ms` }}
               >
                 <div className="w-1/3 overflow-hidden">
@@ -444,11 +443,9 @@ const Blog = () => {
           ].map((category, index) => (
             <div
               key={index}
-              className={`${
-                category.color
-              } rounded-lg shadow-sm hover:shadow-md transition-all duration-500 hover:scale-105 cursor-pointer overflow-hidden relative group ${
-                animatedIndex > index + 7 ? "opacity-100" : "opacity-0"
-              }`}
+              className={`${category.color
+                } rounded-lg shadow-sm hover:shadow-md transition-all duration-500 hover:scale-105 cursor-pointer overflow-hidden relative group ${animatedIndex > index + 7 ? "opacity-100" : "opacity-0"
+                }`}
               style={{ transitionDelay: `${(index + 7) * 100}ms` }}
             >
               <div
@@ -469,7 +466,7 @@ const Blog = () => {
 
       </div>
 
-      
+
       <style jsx>{`
         @keyframes float {
           0% {
