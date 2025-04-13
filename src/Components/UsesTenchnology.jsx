@@ -125,7 +125,7 @@ const UsesTechnology = () => {
   };
 
   return (
-    <div className="max-w-[1170px] m-auto p-5 container mx-auto px-4">
+    <div className="max-w-[1170px] m-auto p-5 container mx-auto px-4 ">
       <div className="max-w-[1170px] m-auto text-center lg:text-left mt-[50px]">
         <p className="text-[#545358] md:text-base text-[14px]">
           Technologies we work with

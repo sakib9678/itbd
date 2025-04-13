@@ -1,11 +1,12 @@
 import Navber from "./Navber";
 import { Outlet } from "react-router-dom";
 import Fotter from "./Fotter";
-import WhySpecial from "../About/WhySpecial";
+import { Toaster } from "react-hot-toast";
 
 const Home = () => {
   return (
     <>
+      <Toaster position="top-right" />
       <Navber />
       <Outlet />
       <Fotter />

@@ -78,8 +78,8 @@ const AppRouter = () => {
           <Route element={<KazAche />} path="/industries/kaz-ache" />
           <Route element={<Contact />} path="/contact" />
           <Route element={<Career />} path="/career" />
-          <Route element={<JobDescription />} path="/career/job-description" />
-          <Route element={<JobApplicationForm />} path="/career/apply-job" />
+          <Route element={<JobDescription />} path="/career/job-description/:slug" />
+          <Route element={<JobApplicationForm />} path="/career/apply-job/:slug" />
           
         </Route>
       </Routes>

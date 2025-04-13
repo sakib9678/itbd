@@ -2,9 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const FrontendDevelopment = () => {
-  return (
-    <div className="container mx-auto px-4">
-      <div className="min-h-screen mt-10">
+  return ( 
+    <div className="container mx-auto px-4 pb-10">
+      <div className=" mt-10">
         <div className="px-4 py-16">
           {/* Hero Section */}
           <motion.div

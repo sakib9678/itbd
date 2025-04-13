@@ -10,8 +10,18 @@ import {
   FaBrain,
   FaHandshake,
 } from "react-icons/fa";
+import { useGetCareerJobsQuery } from "../app/features/apiSlice";
+import { useNavigate } from "react-router-dom";
 
 const Career = () => {
+  const { data: careerJobsData, isLoading, isError } = useGetCareerJobsQuery();
+  // console.log(careerJobsData);
+  const navigate = useNavigate();
+
+  // const base_url = import.meta.env.VITE_API_URL;
+  // console.log(base_url);
+  // console.log(base_url);
+
   const benefits = [
     {
       icon: <FaUsers />,
@@ -55,72 +65,26 @@ const Career = () => {
     },
   ];
 
-  const openPositions = [
-    {
-      title: "Senior Full Stack Developer",
-      type: "Full-time",
-      location: "Remote",
-      department: "Engineering",
-      experience: "5+ years",
-      salary: "$90K - $130K",
-    },
-    {
-      title: "UI/UX Designer",
-      type: "Full-time",
-      location: "Hybrid",
-      department: "Design",
-      experience: "3+ years",
-      salary: "$70K - $90K",
-    },
-    {
-      title: "DevOps Engineer",
-      type: "Full-time",
-      location: "Remote",
-      department: "Operations",
-      experience: "4+ years",
-      salary: "$85K - $120K",
-    },
-    {
-      title: "Product Manager",
-      type: "Full-time",
-      location: "On-site",
-      department: "Product",
-      experience: "5+ years",
-      salary: "$95K - $140K",
-    },
-    {
-      title: "Data Scientist",
-      type: "Full-time",
-      location: "Hybrid",
-      department: "Analytics",
-      experience: "3+ years",
-      salary: "$80K - $115K",
-    },
-    {
-      title: "Flutter Developer",
-      type: "Contract",
-      location: "Remote",
-      department: "Mobile Development",
-      experience: "2+ years",
-      salary: "$70K - $90K",
-    },
-    {
-      title: "Technical Lead",
-      type: "Full-time",
-      location: "On-site",
-      department: "Engineering",
-      experience: "7+ years",
-      salary: "$120K - $160K",
-    },
-    {
-      title: "QA Engineer",
-      type: "Full-time",
-      location: "Hybrid",
-      department: "Quality Assurance",
-      experience: "3+ years",
-      salary: "$65K - $85K",
-    },
-  ];
+  // if (isLoading)
+  //   return (
+  //     <div>
+  //       <div>
+  //         <div className="flex items-center justify-center h-screen">
+  //           <svg
+  //             className="animate-spin h-10 w-10 text-blue-500"
+  //             xmlns="http://www.w3.org/2000/svg"
+  //             viewBox="0 0 24 24"
+  //           >
+  //             <path
+  //               fill="currentColor"
+  //               d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1.5 15h-3v-3h3v3zm0-4.5h-3V7h3v5.5z"
+  //             />
+  //           </svg>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  if (isError) return <div>Error loading data</div>;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -252,50 +216,57 @@ const Career = () => {
           >
             Open Positions
           </motion.h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {openPositions.map((position, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="group bg-gray-50 p-8 rounded-xl hover:bg-[#2D7EB5] transition-all duration-300"
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-2xl font-semibold group-hover:text-white mb-2">
-                      {position.title}
-                    </h3>
-                    <p className="text-gray-600 group-hover:text-white/90">
-                      {position.department}
-                    </p>
-                  </div>
-                  <span className="text-[#2D7EB5] group-hover:text-white font-semibold">
-                    {position.salary}
-                  </span>
-                </div>
-                <div className="flex gap-4 mb-6">
-                  <span className="px-4 py-1 rounded-full text-sm bg-blue-100 text-[#2D7EB5] group-hover:bg-white/20 group-hover:text-white">
-                    {position.type}
-                  </span>
-                  <span className="px-4 py-1 rounded-full text-sm bg-green-100 text-green-800 group-hover:bg-white/20 group-hover:text-white">
-                    {position.location}
-                  </span>
-                  <span className="px-4 py-1 rounded-full text-sm bg-purple-100 text-purple-800 group-hover:bg-white/20 group-hover:text-white">
-                    {position.experience}
-                  </span>
-                </div>
-
-                <a
-                  href="/career/job-description"
-                  className="block w-full bg-[#2D7EB5] group-hover:bg-white group-hover:text-[#2D7EB5] text-white text-center px-6 py-3 rounded-lg font-semibold transition-all transform hover:-translate-y-1 hover:shadow-lg"
+          {isLoading ? (
+            <div>loading...</div>
+          ) : (
+            <div className="grid md:grid-cols-2 gap-8">
+              {careerJobsData?.data?.map((position, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group bg-gray-50 p-8 rounded-xl hover:bg-[#2D7EB5] transition-all duration-300"
                 >
-                  Apply Now →
-                </a>
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-2xl font-semibold group-hover:text-white mb-2">
+                        {position.job_title}
+                      </h3>
+                      <p className="text-gray-600 group-hover:text-white/90">
+                        Department: {position.department}
+                      </p>
+                    </div>
+                    <span className="text-[#2D7EB5] group-hover:text-white font-semibold">
+                      {position.salary_range}
+                    </span>
+                  </div>
+                  <div className="flex gap-4 mb-6">
+                    <span className="px-4 py-1 rounded-full text-sm bg-blue-100 text-[#2D7EB5] group-hover:bg-white/20 group-hover:text-white">
+                      {position.employment_type}
+                    </span>
+                    <span className="px-4 py-1 rounded-full text-sm bg-green-100 text-green-800 group-hover:bg-white/20 group-hover:text-white">
+                      {position.working_type}
+                    </span>
+                    <span className="px-4 py-1 rounded-full text-sm bg-purple-100 text-purple-800 group-hover:bg-white/20 group-hover:text-white">
+                      {position.experience || "2 Year+ "}
+                    </span>
+                  </div>
 
-              </motion.div>
-            ))}
-          </div>
+                  <button
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      navigate(`/career/job-description/${position.id}`);
+                    }}
+                    // href="/career/job-description"
+                    className="block w-full bg-[#2D7EB5] group-hover:bg-white group-hover:text-[#2D7EB5] text-white text-center px-6 py-3 rounded-lg font-semibold transition-all transform hover:-translate-y-1 hover:shadow-lg"
+                  >
+                    Apply Now →
+                  </button>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
