@@ -7,7 +7,7 @@ import {
   FaLinkedinIn,
   FaInstagram,
 } from "react-icons/fa";
-
+import contactImage from "../assets/images/contact.jpg";
 const Contact = () => {
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -29,7 +29,7 @@ const Contact = () => {
       <div className="relative bg-contact h-[400px]  flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 ">
           <img
-            src="src/assets/images/contact.jpg"
+            src={contactImage}
             alt="Contact Hero"
             className="w-full h-full object-cover "
           />
@@ -97,7 +97,7 @@ const Contact = () => {
                       <MdPhone className="text-2xl text-white mt-1" />
                       <div className="ml-4">
                         <p className="text-sm text-white">Phone</p>
-                        <p className="">+88013072794008</p>
+                        <p className="">+8801307279400</p>
                       </div>
                     </div>
                     <div className="flex items-start">

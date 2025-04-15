@@ -73,7 +73,7 @@ const Testimonial = () => {
         <div className=" px-4 sm:px-4 lg:px-8 pb-20 my-10">
           {/* Header Section */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4 animated-text2">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4 animated-text2 md:pt-10">
               Customer Testimonials
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
