@@ -43,7 +43,6 @@ const JobApplicationForm = () => {
       toast.success("Application submitted successfully!");
       console.log("Job application submitted successfully:", response);
 
-      // Reset form fields
       setFormData({
         firstName: "",
         lastName: "",
@@ -52,7 +51,7 @@ const JobApplicationForm = () => {
         resume: null,
         summary: "",
       });
-      setFileUploaded(false); // Reset file upload state
+      setFileUploaded(false);
     } catch (error) {
       toast.error(
         error?.data?.message ||
