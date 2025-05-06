@@ -49,7 +49,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-white max-w-2xl mx-auto px-4"
           >
-            We're here to help and answer any question you might have
+            We are here to help and answer any question you might have
           </motion.p>
         </div>
       </div>
@@ -97,7 +97,7 @@ const Contact = () => {
                       <MdPhone className="text-2xl text-white mt-1" />
                       <div className="ml-4">
                         <p className="text-sm text-white">Phone</p>
-                        <p className="">+8801307279400</p>
+                        <p className="">+8801901378180</p>
                       </div>
                     </div>
                     <div className="flex items-start">

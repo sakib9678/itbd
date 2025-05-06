@@ -55,10 +55,10 @@ const Navbar = () => {
             <div className="flex items-center gap-2 hover:text-[#f76b1d] transition-all">
               <FiPhoneCall className="text-white animate-bounce" />
               <a
-                href="tel:+8801307-279400"
+                href="tel:+88001901378180"
                 className="text-sm text-white hover:underline"
               >
-                +8801307-279400
+                +8801901-378180
               </a>
             </div>
           </div>

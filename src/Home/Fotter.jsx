@@ -8,12 +8,15 @@ import {
 import { motion } from "framer-motion";
 import logo from "../assets/images/itbd-logo.png";
 import { LuLayoutList } from "react-icons/lu";
-import BoiAcheIcon from "../assets/images/boiAcheIcon.png";
+import BoiAcheIcon from "../assets/images/boiAcheLogo.png";
 import EduPoribarIcon from "../assets/images/eduporibar-fotter.jpg";
 import BDCODAIcon from "../assets/images/bd-coda-fotter.png";
 import LaptopAcheIcon from "../assets/images/laptop-ache-fotter.jpg";
 import KazAcheIcon from "../assets/images/kaz-ache.png";
-import CourierAcheIcon from "../assets/images/courierAche-icon.png";
+import CourierAcheIcon from "../assets/images/courierAcheLogo.png";
+import etdp from "../assets/images/etdp.jpg";
+import hozache from "../assets/images/hozache.png";
+import bdponno from "../assets/images/64bdponno.png";
 
 const Footer = () => {
   const socialVariants = {
@@ -182,47 +185,82 @@ const Footer = () => {
               </h3>
               <div className="flex flex-col space-y-3 text-gray-600">
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-5">
-                  <div className="bg-white w-16  h-16 flex items-center justify-center rounded-full shadow-lg p-2">
-                    <img
-                      className="w-16 rounded-full"
-                      src={EduPoribarIcon}
-                      alt=""
-                    />
+                  <div className="bg-white w-[75px]  h-[75px] flex items-center justify-center rounded-full shadow-lg p-2">
+                    <a href="https://eduporibar.com/" target="_blank">
+                      <img
+                        className="w-16 rounded-full"
+                        src={EduPoribarIcon}
+                        alt=""
+                      />
+                    </a>
                   </div>
-                  <div className="bg-white w-16  h-16 flex items-center justify-center rounded-full shadow-lg p-2">
-                    <img
-                      className="w-16 rounded-full"
-                      src={LaptopAcheIcon}
-                      alt=""
-                    />
+                  <div className="bg-white w-[75px]  h-[75px] flex items-center justify-center rounded-full shadow-lg p-2">
+                    <a href="https://laptopache.com/" target="_blank">
+                      <img
+                        className="w-16 rounded-full "
+                        src={LaptopAcheIcon}
+                        alt=""
+                      />
+                    </a>
                   </div>
-                  <div className="bg-white w-16  h-16 flex items-center justify-center rounded-full shadow-lg p-2">
-                    <img
-                      className="w-16 rounded-full "
-                      src={BDCODAIcon}
-                      alt=""
-                    />
+                  <div className="bg-white w-[75px]  h-[75px] flex items-center justify-center rounded-full shadow-lg p-2">
+                    <a href="https://bdcoda.com/" target="_blank">
+                      <img
+                        className="w-16 rounded-full "
+                        src={BDCODAIcon}
+                        alt=""
+                      />
+                    </a>
                   </div>
-                  <div className="bg-white w-16  h-16 flex items-center justify-center rounded-full shadow-lg p-2">
-                    <img
-                      className="w-16 rounded-full "
-                      src={KazAcheIcon}
-                      alt=""
-                    />
+                  <div className="bg-white w-[75px]  h-[75px] flex items-center justify-center rounded-full shadow-lg p-2">
+                    <a href="https://kazache.com/" target="_blank">
+                      <img
+                        className="w-16 rounded-full "
+                        src={KazAcheIcon}
+                        alt=""
+                      />
+                    </a>
                   </div>
-                  <div className="bg-white w-16  h-16 flex items-center justify-center rounded-full shadow-lg p-2">
-                    <img
-                      className="w-16 rounded-full "
-                      src={CourierAcheIcon}
-                      alt=""
-                    />
+                  <div className="bg-white w-[75px]  h-[75px] flex items-center justify-center rounded-full shadow-lg p-2">
+                    <a href="https://courierache.com/" target="_blank">
+                      <img
+                        className="w-16 rounded-full "
+                        src={CourierAcheIcon}
+                        alt=""
+                      />
+                    </a>
                   </div>
-                  <div className="bg-white w-16  h-16 flex items-center justify-center rounded-full shadow-lg p-2">
-                    <img
-                      className="w-16 rounded-full "
-                      src={BoiAcheIcon}
-                      alt=""
-                    />
+                  <div className="bg-white w-[75px]  h-[75px] flex items-center justify-center rounded-full shadow-lg p-2">
+                    <a href="https://boiache.com/" target="_blank">
+                      <img
+                        className="w-16 rounded-full "
+                        src={BoiAcheIcon}
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div className="bg-white w-[75px]  h-[75px] flex items-center justify-center rounded-full shadow-lg p-2">
+                    <a href="https://etdp.com.bd/" target="_blank">
+                      <img className="w-16 rounded-full " src={etdp} alt="" />
+                    </a>
+                  </div>
+                  <div className="bg-white w-[75px]  h-[75px] flex items-center justify-center rounded-full shadow-lg p-2">
+                    <a href="https://hozache.com" target="_blank">
+                      <img
+                        className="w-16 rounded-full "
+                        src={hozache}
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div className="bg-white w-[75px]  h-[75px] flex items-center justify-center rounded-full shadow-lg p-2">
+                    <a href="https://64bdponno.com" target="_blank">
+                      <img
+                        className="w-16 rounded-full "
+                        src={bdponno}
+                        alt=""
+                      />
+                    </a>
                   </div>
                 </div>
               </div>
