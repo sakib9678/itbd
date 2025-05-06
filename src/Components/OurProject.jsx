@@ -209,7 +209,7 @@ const OurProject = () => {
         className="container mx-auto px-4"
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">
+          <h2 className="mb-6 animated-text">
             Our Projects
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">

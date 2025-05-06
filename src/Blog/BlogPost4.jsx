@@ -12,7 +12,7 @@ const BlogPost4 = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-serif font-bold text-[#246A99] tracking-wide">
+          <h1 className="animated-text font-serif tracking-wide">
             The Future of Cloud Architecture in 2025
           </h1>
           <p className="text-lg text-gray-600 mt-4 italic">

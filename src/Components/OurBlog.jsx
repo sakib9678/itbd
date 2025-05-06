@@ -46,9 +46,9 @@ const OurBlog = () => {
                   Explore the latest trends in technology and their impact on
                   our daily lives.
                 </p>
-                <button className="flex items-center text-blue-500 hover:text-blue-700">
+                <a href="/blog" className="flex items-center text-blue-500 hover:text-blue-700">
                   Read More <FaArrowRight className="ml-2" />
-                </button>
+                </a>
               </div>
             </div>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
@@ -74,9 +74,9 @@ const OurBlog = () => {
                 <p className="text-gray-600">
                   Learn about modern web development techniques and tools.
                 </p>
-                <button className="flex items-center text-blue-500 hover:text-blue-700">
+                <a href="/blog" className="flex items-center text-blue-500 hover:text-blue-700">
                   Read More <FaArrowRight className="ml-2" />
-                </button>
+                </a>
               </div>
             </div>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
@@ -102,9 +102,9 @@ const OurBlog = () => {
                 <p className="text-gray-600">
                   Discover how businesses are adapting to the digital age.
                 </p>
-                <button className="flex items-center text-blue-500 hover:text-blue-700">
+                <a href="/blog" className="flex items-center text-blue-500 hover:text-blue-700">
                   Read More <FaArrowRight className="ml-2" />
-                </button>
+                </a>
               </div>
             </div>
           </div>
