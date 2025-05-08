@@ -8,6 +8,8 @@ import cardData from ".././mock-data/card.json";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
+
 const Services = () => {
   const sliderRef = useRef(null);
   const sectionRef = useRef(null);

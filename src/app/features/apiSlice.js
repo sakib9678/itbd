@@ -3,10 +3,10 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://login.ibrahimtechbd.com", // Hardcoded base URL
-    prepareHeaders: (headers, { getState }) => {
+    baseUrl: "https://login.ibrahimtechbd.com",
+    prepareHeaders: (headers) => {
       headers.set("Accept", "application/json");
-      // Do not set Content-Type for FormData
+      headers.set("Content-Type", "application/json");
       return headers;
     },
   }),
@@ -24,6 +24,62 @@ export const apiSlice = createApi({
         body: jobData,
       }),
     }),
+    registerAffiliate: builder.mutation({
+      query: (userData) => ({
+        url: "/api/affiliate/register",
+        method: "POST",
+        body: userData,
+      }),
+    }),
+    loginAffiliate: builder.mutation({
+      query: (credentials) => ({
+        url: "/api/affiliate/login",
+        method: "POST",
+        body: credentials,
+      }),
+    }),
+    getAffiliateDashboard: builder.query({
+      query: () => ({
+        url: "/api/affiliate/dashboard",
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("affiliateToken")}`,
+        },
+      }),
+    }),
+
+    
+    getAffiliateTransiction: builder.query({
+      query: () => ({
+        url: "/api/affiliate/transaction",
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("affiliateToken")}`,
+        },
+      }),
+    }),
+    updateAffiliateProfile: builder.mutation({
+      query: (formData) => ({
+        url: "/api/affiliate/profile/update",
+        method: "POST",
+        body: formData,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("affiliateToken")}`,
+          'Content-Type': undefined,
+        },
+        formData: true,
+      }),
+      invalidatesTags: ['Profile', 'Dashboard'],
+      async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+        try {
+          await queryFulfilled;
+          // Refetch dashboard data after successful update
+          dispatch(apiSlice.util.invalidateTags(['Dashboard']));
+        } catch (error) {
+          console.error('Update failed:', error);
+        }
+      },
+    }),
   }),
 });
 
@@ -31,4 +87,9 @@ export const {
   useGetCareerJobsQuery,
   useGetCircularDetailsQuery,
   useSubmitJobMutation,
+  useRegisterAffiliateMutation,
+  useLoginAffiliateMutation,
+  useGetAffiliateDashboardQuery,
+  useGetAffiliateTransictionQuery,
+  useUpdateAffiliateProfileMutation
 } = apiSlice;

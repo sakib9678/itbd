@@ -139,6 +139,16 @@ const Footer = () => {
                     </a>
                   </motion.li>
                 </li>
+                <li>
+                  <motion.li variants={listItemVariants} whileHover="hover">
+                    <a
+                      href="/affiliate"
+                      className="text-gray-600 hover:text-[#2D7EB5] transition duration-300 text-lg flex items-center"
+                    >
+                      <span>→ Affiliate Join</span>
+                    </a>
+                  </motion.li>
+                </li>
               </ul>
             </div>
 

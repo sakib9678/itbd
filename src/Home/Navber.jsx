@@ -20,11 +20,11 @@ import {
   FaBook,
 } from "react-icons/fa6";
 import BoiAcheIcon from "../assets/images/boiAcheIcon.png";
-import EduPoribarIcon from "../assets/images/eduporibar-icon.png";
-import BDCODAIcon from "../assets/images/bdcoda-icon.png";
-import LaptopAcheIcon from "../assets/images/laptopAche-icon.png";
-import KazAcheIcon from "../assets/images/kazAche-icon.png";
-import CourierAcheIcon from "../assets/images/courierAche-icon.png";
+import EduPoribarIcon from "../assets/images/eduporibar-icon.jpg";
+import BDCODAIcon from "../assets/images/bdcoda-icon.jpg";
+import LaptopAcheIcon from "../assets/images/laptopAche-icon.jpg";
+import KazAcheIcon from "../assets/images/kazAche-icon.jpg";
+import CourierAcheIcon from "../assets/images/courierAche-icon.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
